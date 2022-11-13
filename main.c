@@ -7,14 +7,13 @@ const char* magic = "rtcTest";
 int main (void) {
     ENABLE_RAM;
     if (memcmp((void*)_SRAM, magic, 8)) {
-        blankRTC();
         memcpy((void*)_SRAM, magic, 8);
         blankRTC();
         puts("Initialized data.\n\nEvery load, the time elapsed since the last RTC check will be shown.\n\nEvery check requires a reset.");
     }
     else {
         if (rtcOverflowed()) {
-            puts("The RTC is signaling an overflow. The following information is likely wrong.\n");
+            puts("The RTC is signaling an overflow. The following information is likely wrong.\n\n");
         }
 
         // this has to be done with these particular semantics because of the broken printf implementation
