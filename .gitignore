@@ -1,0 +1,14 @@
+# list of files that Makefile cleans
+*.o
+*.lst
+*.map
+*.gb
+*.ihx
+*.sym
+*.cdb
+*.adb
+*.asm
+
+# save files
+*.sav
+*.rtc
